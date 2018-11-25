@@ -32,3 +32,8 @@
         // this will return an array of the arguments of the DIController
     }  
 })();
+
+/* =========================== */
+// the Minified code
+
+/*!function(){"use strict";angular.module("DIApp",[]).controller("DIController",["$scope","$filter","$injector",function n(e,o,r){e.name="";e.upper=function(){var n=o("uppercase");e.name=n(e.name)};console.log(r.annotate(n))}])}();*/
