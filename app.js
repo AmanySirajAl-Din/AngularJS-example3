@@ -27,7 +27,9 @@
 
     // $filter service lets us create filtering functions
     //that used for formatting the data that eventually gets displayed to the user
-
-    // $injector service is the service which do all the magic
-    // of finding where to inject which services 
 })();
+
+/* =========================== */
+// the Minified code
+
+/*!function(){"use strict";angular.module("DIApp",[]).controller("DIController",["$scope","$filter","$injector",function(e,n,r){e.name="",e.upper=function(){var r=n("uppercase");e.name=r(e.name)}}])}();*/
