@@ -7,6 +7,9 @@ angular.module('DIApp', [])
 
 // $filter service lets us create filtering functions
 //that used for formatting the data that eventually gets displayed to the user
+    
+// $injector service is the service which do all the magic
+// of finding where to inject which services 
 function DIController ($scope,
                         $filter, 
                         $injector){
