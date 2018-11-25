@@ -4,31 +4,25 @@
     angular.module('DIApp', [])
 
     // To protect the dependency injection from Minification
-    // first aproach is
-    // specify an array giving it the arguments of the controller function and the last element will be the controller function itself
-    // so no matter the minification does to the arguments it's already been specified
-    // the array elements is saved from minification cause they are string literal that will never get mimified cause it's real data
+    // third aproach is
 
-    .controller('DIController', ['$scope', '$filter', '$injector', DIController]);
-
-    // $filter service lets us create filtering functions
-    //that used for formatting the data that eventually gets displayed to the user
-
-    // $injector service is the service which do all the magic
-    // of finding where to inject which services 
-    function DIController ($scope,
-                            $filter, 
-                            $injector){
+    .controller('DIController', DIController);
+    
+    DIController.$inject = ['$scope', '$filter'];
+    // Angular will look for $inject proprty for the controller function
+    // and if it finds it it will use its array as a guidance to see which service to inject into which argument
+    
+    function DIController ($scope, $filter){
         $scope.name = "";
 
-        // function will run when the textbox loses focus
-        // this function will convert the text in the textbox to uppercase
         $scope.upper = function(){
             var upCase = $filter('uppercase');
             $scope.name = upCase($scope.name);
         };
-
-        console.log($injector.annotate(DIController));
-        // this will return an array of the arguments of the DIController
     }  
 })();
+
+/* ========================== */
+// the Minified Code
+
+/*!function(){"use strict";function e(e,n){e.name="",e.upper=function(){var r=n("uppercase");e.name=r(e.name)}}angular.module("DIApp",[]).controller("DIController",e),e.$inject=["$scope","$filter"]}();*/
