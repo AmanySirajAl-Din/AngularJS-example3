@@ -3,12 +3,6 @@
 
     angular.module('DIApp', [])
 
-    // To protect the dependency injection from Minification
-    // first aproach is
-    // specify an array giving it the arguments of the controller function and the last element will be the controller function itself
-    // so no matter the minification does to the arguments it's already been specified
-    // the array elements is saved from minification cause they are string literal that will never get mimified cause it's real data
-
     .controller('DIController', DIController);
 
     // $filter service lets us create filtering functions
