@@ -4,6 +4,8 @@
     angular.module('DIApp', [])
 
     .controller('DIController', DIController);
+    
+    DIController.$inject = ['$scope', '$filter', '$injector'];
 
     // $filter service lets us create filtering functions
     //that used for formatting the data that eventually gets displayed to the user
