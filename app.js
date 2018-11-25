@@ -7,7 +7,9 @@ angular.module('DIApp', [])
 
 // $filter service lets us create filtering functions
 //that used for formatting the data that eventually gets displayed to the user
-function DIController ($scope, $filter){
+function DIController ($scope,
+                        $filter, 
+                        $injector){
     $scope.name = "";
     
     // function will run when the textbox loses focus
@@ -16,6 +18,11 @@ function DIController ($scope, $filter){
         var upCase = $filter('uppercase');
         $scope.name = upCase($scope.name);
     };
+    
+    console.log($injector.annotate(DIController));
+    // this will return an array of the arguments of the DIController
 }
+    
+
     
 })();
