@@ -9,7 +9,7 @@
     // so no matter the minification does to the arguments it's already been specified
     // the array elements is saved from minification cause they are string literal that will never get mimified cause it's real data
 
-    .controller('DIController', ['$scope', '$filter', '$injector', DIController]);
+    .controller('DIController', DIController);
 
     // $filter service lets us create filtering functions
     //that used for formatting the data that eventually gets displayed to the user
