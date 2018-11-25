@@ -3,7 +3,10 @@
 
 angular.module('DIApp', [])
 
-.controller('DIController', DIController);
+// To protect the dependency injection from Minification
+// first aproach is
+// specify an array giving it the arguments of the controller function and the last element will be the controller function itself
+.controller('DIController', ['$scope', '$filter', '$injector', DIController]);
 
 // $filter service lets us create filtering functions
 //that used for formatting the data that eventually gets displayed to the user
