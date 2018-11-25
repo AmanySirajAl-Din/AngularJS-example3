@@ -10,7 +10,7 @@ angular.module('DIApp', [])
 function DIController ($scope, $filter){
     $scope.name = "";
     
-    // functions will run when the textbox loses focus
+    // function will run when the textbox loses focus
     // this function will convert the text in the textbox to uppercase
     $scope.upper = function(){
         var upCase = $filter('uppercase');
